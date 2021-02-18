@@ -16,10 +16,10 @@ class NotesController < ApplicationController
   end
 
   def edit
-    if current_user.id == current_note.user.id
+    if current_note && current_user.id == current_note.user.id
       render :edit
     else
-      render user_path(current_user)
+      redirect_to user_path(current_user)
     end
   end
 
@@ -30,6 +30,14 @@ class NotesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    if current_note && current_user.id == current_note.user.id
+      current_note.delete
+      flash[:message] = "Note successfully deleted."
+    end
+    redirect_to user_path(current_user)
   end
 
   private
