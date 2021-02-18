@@ -1,3 +1,15 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
 
+<%= link_to "Add a Note", new_note_path %> |
 <%= link_to "Log Out", logout_path, method: "delete" %>
+
+<br><br>
+
+<% @user.notes.each do |note| %>
+  <%= "#{note.title} (Created by: #{@user.first_name} #{@user.last_name} #{note.created_at})" %>
+  <%= link_to "Edit", edit_note_path(note) %>
+  <%= link_to "Delete", note_path(note), method: "delete" %>
+  <br>
+  <%= "#{note.body}" %>
+  <br>
+<% end %>
