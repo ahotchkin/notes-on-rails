@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
   def show
     redirect_if_not_logged_in
-    @user = User.find_by_id(params[:id])
+    # using session[:user_id] so user can't update id in params and see another user's dashboard. If id in url is updated to another id, current_user's dashboard is displayed but manually entered id displays in url. 
+    @user = User.find_by_id(session[:user_id])
     redirect_to "/" if !@user
   end
 
