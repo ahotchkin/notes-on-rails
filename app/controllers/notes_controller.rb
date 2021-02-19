@@ -15,6 +15,14 @@ class NotesController < ApplicationController
     end
   end
 
+  def show
+    if current_note && current_user.id == current_note.user.id
+      render :show
+    else
+      redirect_to user_path(current_user)
+    end
+  end
+
   def edit
     if current_note && current_user.id == current_note.user.id
       render :edit
