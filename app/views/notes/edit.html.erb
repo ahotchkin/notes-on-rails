@@ -1,5 +1,8 @@
 <h1>Edit Note</h1>
 
+<%# Partial not rendering - why??? %>
+<%= render :partial => "layouts/errors", :locals => {:object => current_note} %>
+
 <%= form_for current_note do |f| %>
 
   <%= f.label :title %>
