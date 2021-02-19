@@ -11,6 +11,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to user_path(current_user)
     else
+      flash[:message] = @note.errors.full_messages.to_sentence
       render :new
     end
   end
