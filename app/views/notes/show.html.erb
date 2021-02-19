@@ -1,0 +1,7 @@
+<h1><%= "#{current_note.title}" %></h1>
+<%= "Created by: #{current_user.first_name} #{current_user.last_name},  #{current_note.created_at.in_time_zone(current_user.time_zone).strftime("%a %I:%M%p")}" %>
+<br>
+<%= "#{current_note.body}" %>
+<br>
+<%= link_to "Edit", edit_note_path(current_note) %>
+<%= link_to "Delete", note_path(current_note), method: "delete" %>
