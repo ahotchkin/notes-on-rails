@@ -16,10 +16,10 @@
 
 body {
  background-color: #e9ebf0;
- margin: 5%;
 }
 
 h1 {
+  margin: 5%;
   text-align: center;
 }
 
@@ -33,13 +33,17 @@ p {
 
 .btn {
   width: 150px;
+  margin: 0 10px;
+  background-color: #FFF;
+  border-color: #2b478c;
+  color: #2b478c;
+}
+
+.btn-center {
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #FFF;
-  border-color: #2b478c;
-  color: #2b478c;
 }
 
 .btn:hover {
@@ -47,14 +51,25 @@ p {
   color: #2b478c;
 }
 
-.btn-primary-fill:focus {
-  background-color: #003C8A;
-  border-color: #003C8A;
-  color: #FFF;
+.navbar-dark {
+  background-color: #2b478c;
 }
 
-.btn-primary-fill:active {
-  background-color: #003C8A;
-  border-color: #003C8A;
-  color: #FFF;
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  padding-left: 15px;
+}
+
+.nav-link {
+  color:  #adc5ff;
+}
+
+.nav-link:hover {
+  color:  #FFF;
+}
+
+.nav-link:active {
+  color:  #e9ebf0;
 }
