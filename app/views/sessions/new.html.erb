@@ -2,14 +2,19 @@
 
 <%= flash[:message] if flash[:message] %>
 
-<%= form_for :user do |f| %>
+<%= form_for :user, html: {:class => "form"} do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, required: true %>
+  <div class="mb-3">
+    <%= f.label :email, :class => "form-label" %>
+    <%= f.email_field :email, required: true, :class => "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :password, :class => "form-label" %>
+    <%= f.password_field :password, required: true, :class => "form-control" %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, required: true %>
-
-  <%= f.submit "Log In" %>
+  <%= f.submit "Log In", :class => "btn btn-center" %>
 
 <% end %>
+
+<p>Don't have an account? <%= link_to "Sign up", signup_path %>.</p>
