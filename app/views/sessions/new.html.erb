@@ -1,6 +1,8 @@
 <h1>Log In</h1>
 
-<%= flash[:message] if flash[:message] %>
+<div class="message">
+  <%= flash[:message] if flash[:message] %>
+</div>
 
 <%= form_for :user, html: {:class => "form"} do |f| %>
 
