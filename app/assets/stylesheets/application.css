@@ -81,3 +81,63 @@ p {
 .nav-link:active {
   color:  #e9ebf0;
 }
+
+.paper {
+  width: 600px;
+  height: 700px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.single-paper {
+  height: 445px;
+}
+
+.paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+.pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+.content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.note-info {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.message {
+  color: #b906d1;
+  text-align: center;
+}
+
+#error-explanation {
+  color: #b906d1;
+  margin-left: 22%;
+  margin-right: 22%;
+}
