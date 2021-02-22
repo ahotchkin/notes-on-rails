@@ -1,9 +1,9 @@
 class Note < ApplicationRecord
   belongs_to :user
 
-  validates :title, presence: true, if: -> { body.blank? }
+  validates :title, presence: { message: "can't be blank if body is blank" }, if: -> { body.blank? }
   validates :title, length: { maximum: 30, too_long: "can't be more than %{count} characters" }
-  validates :body, presence: true, if: -> { title.blank? }
+  validates :body, presence: { message: "can't be blank if title is blank" }, if: -> { title.blank? }
   validates :body, length: { maximum: 1000, too_long: "can't be more than %{count} characters" }
 
   before_save do
