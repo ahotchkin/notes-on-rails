@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   before_action :redirect_if_logged_in, except: :destroy
-  
+
   def create
     user = User.find_by(email: params[:user][:email])
     if user && user.authenticate(params[:user][:password])
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to root_path
+    redirect_to login_path
   end
 
 end
