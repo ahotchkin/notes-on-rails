@@ -1,3 +1,48 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.paper {
+  width: 600px;
+  height: 700px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.single-paper {
+  height: 445px;
+}
+
+.paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+.pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+.content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
+.note-info {
+  font-style: italic;
+  font-size: 12px;
+}
