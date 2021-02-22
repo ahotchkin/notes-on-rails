@@ -14,6 +14,7 @@ As a user you can create an account, add notes, update notes as information chan
 
 - Clone this repo
 - Execute bundle install
+- Run rails db:create
 - Run rails db:migrate
 - Run rspec to run the test suite
 - Start the server with rails s
