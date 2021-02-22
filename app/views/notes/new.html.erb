@@ -2,19 +2,4 @@
 
 <%= render :partial => "layouts/errors", :locals => {:object => @note} %>
 
-<%= form_for @note, html: {:class => "form"} do |f| %>
-
-  <div class="mb-3">
-    <%= f.label :title, :class => "form-label" %>
-    <%= f.text_field :title, :class => "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :body, :class => "form-label" %>
-    <%= f.text_area :body, :class => "form-control" %>
-  </div>
-
-  <br>
-
-  <%= f.submit "Create Note", :class => "btn btn-center" %>
-
-<% end %>
+<%= render :partial => "form", :locals => {:note => @note} %>
