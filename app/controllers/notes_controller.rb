@@ -24,7 +24,9 @@ class NotesController < ApplicationController
   end
 
   def edit
-    if current_note && current_user.id == current_note.user.id
+    # not using current_note because of issues with update action
+    @note = Note.find_by_id(params[:id])
+    if @note && current_user.id == @note.user.id
       render :edit
     else
       redirect_to user_path(current_user)
@@ -32,11 +34,13 @@ class NotesController < ApplicationController
   end
 
   def update
-    if current_note.update(note_params)
+    # when using current_note errors do not render
+    @note = Note.find_by_id(params[:id])
+    if @note.update(note_params)
       redirect_to user_path(current_user)
       flash[:message] = "Note successfully updated."
     else
-      # errors are not available on object and are not displaying on edit page when rendered, however validations are working properly
+      # url changes to note/:id, but edit view is rendered with errors
       render :edit
     end
   end

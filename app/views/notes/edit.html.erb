@@ -1,6 +1,5 @@
 <h1>Edit Note</h1>
 
-<%# Partial not rendering - why??? %>
-<%= render partial: "layouts/errors", locals: {object: current_note} %>
+<%= render partial: "layouts/errors", locals: {object: @note} %>
 
-<%= render partial: "form", locals: {note: current_note} %>
+<%= render partial: "form", locals: {note: @note} %>
