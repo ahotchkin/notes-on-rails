@@ -55,12 +55,11 @@ class NotesController < ApplicationController
 
   private
 
-    def note_params
-      params.require(:note).permit(:title, :body)
-    end
+  def note_params
+    params.require(:note).permit(:title, :body)
+  end
 
-    def current_note
-      note = Note.find_by_id(params[:id])
-    end
-
+  def current_note
+    note = Note.find_by_id(params[:id])
+  end
 end

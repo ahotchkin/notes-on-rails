@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   before_action :redirect_if_logged_in, except: :destroy
 
   def create
@@ -17,5 +16,4 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to login_path
   end
-
 end
