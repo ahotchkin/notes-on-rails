@@ -36,7 +36,7 @@ class NotesController < ApplicationController
       redirect_to user_path(current_user)
       flash[:message] = "Note successfully updated."
     else
-      # errors are not available on object and are not displaying on edit page, however validations are working properly
+      # errors are not available on object and are not displaying on edit page when rendered, however validations are working properly
       render :edit
     end
   end
