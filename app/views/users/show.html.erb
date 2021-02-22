@@ -7,10 +7,14 @@
 <div class="paper">
   <div class="pattern">
     <div class="content">
-      <% @user.notes.each do |note| %>
-        <%= link_to "#{note.title}", note_path(note) %>
-        <%= render :partial => "/notes/note", :locals => {:user => @user, :note => note} %>
-        <br><br>
+      <% if @user.notes.length == 0 %>
+        You have no notes.
+      <% else %>
+        <% @user.notes.each do |note| %>
+          <%= link_to "#{note.title}", note_path(note) %>
+          <%= render :partial => "/notes/note", :locals => {:user => @user, :note => note} %>
+          <br><br>
+        <% end %>
       <% end %>
     </div>
   </div>
