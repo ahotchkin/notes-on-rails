@@ -2,7 +2,7 @@
   <div class="pattern">
     <div class="content">
       <%= "#{current_note.title}" %>
-      <%= render :partial => "note", :locals => {:note => current_note, :user => current_user} %>
+      <%= render partial: "note", locals: {note: current_note, user: current_user} %>
     </div>
   </div>
 </div>

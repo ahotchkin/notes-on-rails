@@ -4,20 +4,20 @@
   <%= flash[:message] if flash[:message] %>
 </div>
 
-<%= form_for :user, html: {:class => "form"} do |f| %>
+<%= form_for :user, html: {class: "form"} do |f| %>
 
   <div class="mb-3">
-    <%= f.label :email, :class => "form-label" %>
-    <%= f.email_field :email, required: true, :class => "form-control" %>
+    <%= f.label :email, class: "form-label" %>
+    <%= f.email_field :email, required: true, class: "form-control" %>
   </div>
   <div class="mb-3">
-    <%= f.label :password, :class => "form-label" %>
-    <%= f.password_field :password, required: true, :class => "form-control" %>
+    <%= f.label :password, class: "form-label" %>
+    <%= f.password_field :password, required: true, class: "form-control" %>
   </div>
 
   <br>
 
-  <%= f.submit "Log In", :class => "btn btn-center" %>
+  <%= f.submit "Log In", class: "btn btn-center" %>
 
 <% end %>
 

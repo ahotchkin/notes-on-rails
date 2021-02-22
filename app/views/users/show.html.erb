@@ -12,7 +12,7 @@
       <% else %>
         <% @user.notes.each do |note| %>
           <%= link_to "#{note.title}", note_path(note) %>
-          <%= render :partial => "/notes/note", :locals => {:user => @user, :note => note} %>
+          <%= render partial: "/notes/note", locals: {user: @user, note: note} %>
           <br><br>
         <% end %>
       <% end %>
