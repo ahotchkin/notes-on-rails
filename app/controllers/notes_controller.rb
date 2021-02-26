@@ -10,7 +10,8 @@ class NotesController < ApplicationController
     @note = current_user.notes.build(note_params)
     if @note.save
       #send an email
-      NoteMailer.note_email(current_user, @note).deliver_now
+      # NoteMailer.note_email(current_user, @note).deliver_now
+      NoteMailer.with(user: current_user, note: @note).note_email.deliver_now
       # email.deliver_later
       redirect_to user_path(current_user)
     else
